@@ -1,0 +1,7 @@
+ACTION_GET_CONTENT is used to select multiple types of data and return it. You can directly pick what type of content you want by setting MIME type to that kind of data. Or you can pick any type of data you want. For this wrap your intent with a chooser, which will start a new activity and let the user to pick their desired content. Here is how to do it.
+
+    Intent intent = new Intent();
+    intent.setType("image/*");
+    intent.setAction(Intent.ACTION_GET_CONTENT);
+    intent.putExtra("return-data", true);
+    startActivityForResult(Intent.createChooser(intent, "Complete action using"), PICK_FROM_GALLERY);
