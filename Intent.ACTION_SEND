@@ -1,0 +1,6 @@
+ACTION_SEND is used to send data to other activities in your app or to other apps. Both are easy to understand and work with. If you want to send data to other activity in your app then all you need is to specify the data and its type. Tha Android OS will do the rest… it will find compatible activity and display the data. Similarly you can send data to other applications. Set type of content to simple plain text. Here is how it should be coded
+
+    final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+    emailIntent.setType("plain/text");
+    emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,new String[] { email });
+    emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,subject);
